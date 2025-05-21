@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Roshan Gurung</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Dark Mode CSS -->
+  <style>
+    /* Mobile Navigation Styles */
+    @media (max-width: 1024px) {
+      .navmenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #000000;
+        transition: 0.3s;
+        padding: 50px 0;
+        z-index: 9999;
+      }
+
+      .navmenu.active {
+        right: 0;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        padding: 0 40px;
+      }
+
+      .navmenu ul li {
+        margin: 15px 0;
+        color: #000000 !important;
+      }
+
+      .navmenu ul li a {
+        color: #000000 !important;
+        font-size: 18px;
+        display: block;
+        padding: 10px 0;
+      }
+
+      .navmenu ul li a:hover {
+        color: #0078ff !important;
+      }
+
+      .mobile-nav-toggle {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        z-index: 9999;
+        border: 0;
+        background: none;
+        font-size: 24px;
+        transition: all 0.4s;
+        outline: none !important;
+        line-height: 1;
+        cursor: pointer;
+        color: #ffffff;
+      }
+
+      .mobile-nav-toggle.bi-x {
+        color: #ffffff;
+      }
+
+      .mobile-nav-active {
+        overflow: hidden;
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+      }
+    }
+    /* Dark Mode Styles */
+    body {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    
+    .section {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Hero section specific background */
+    #hero, #hero.hero, #hero.section, #hero.dark-background {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    
+    
+    .header {
+      background-color: #000000 !important;
+    }
+    
+    @media (max-width: 1024px) {
+      .navmenu ul li a {
+        color: #000000 !important;
+      }
+    }
+    .navmenu ul li a, .sitename, h1, h2, h3, h4, h5, h6, p, .about-info span, .about-info strong {
+      color: #ffffff !important;
+    }
+    
+    /* Fix for white boxes with white text */
+    .service-item, .resume-item, .portfolio-info, .stats-item {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    /* Ensure links and text inside these elements are visible */
+    .service-item h3, .service-item p, .service-item a,
+    .resume-item h4, .resume-item h5, .resume-item p, .resume-item em, .resume-item li,
+    .portfolio-info h4, .portfolio-info p, .portfolio-info a,
+    .stats-item span, .stats-item p {
+      color: #ffffff !important;
+    }
+    
+    /* Fix for icons to ensure visibility - removed blue overlay */
+    .service-item .icon i, .portfolio-info i {
+      color: #ffffff !important;
+    }
+    
+    /* Fix for about box, FAQ, and contact info */
+    .about-info, .faq-item,
+    .faq-item h3 button, .faq-item .accordion-body {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    /* Fix for form inputs and textareas */
+    .form-control, textarea.form-control {
+     
+      color: #fff !important;
+      border-color: #444 !important;
+    }
+    
+    /* Fix for form placeholders */
+    ::placeholder {
+      color: #aaa !important;
+      opacity: 1 !important;
+    }
+    
+    /* Enhanced fix for contact section */
+    .contact .info-box, .contact .info-item, .contact-info .info-item {
+     
+      color: #ffffff !important;
+     
+    }
+    .form-control, textarea.form-control, 
+  .php-email-form input[type="text"],
+  .php-email-form input[type="email"],
+  .php-email-form input[type="subject"],
+  .php-email-form textarea {
+    background-color: #333333 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+    border-radius: 10px !important; /* Add rounded corners */
+    padding: 12px 15px !important; /* Add some padding for better appearance */
+  }
+  
+  /* Make the submit button rounded too */
+  .php-email-form button[type="submit"] {
+    border-radius: 10px !important;
+    padding: 12px 24px !important;
+  }
+  
+  /* Also round the info-item boxes in the contact section */
+  
+  
+    .contact .info-box i, .contact .info-box h3, .contact .info-box p,
+    .contact .info-item i, .contact .info-item h3, .contact .info-item p,
+    .contact-info .info-item i, .contact-info .info-item h3, .contact-info .info-item p,
+    .contact .php-email-form, .contact-form {
+      color: #ffffff !important;
+    }
+    
+    /* Enhanced fix for contact container and all its elements */
+    .container1[data-aos="fade-up"][data-aos-delay="100"],
+    .php-email-form[data-aos="fade-up"][data-aos-delay="300"] {
+      background-color: #000000;
+      color: #ffffff !important;
+      box-shadow: none !important;
+      padding: 20px !important;
+      border-radius: 5px !important;
+    }
+    .container[data-aos="fade-up"][data-aos-delay="100"]
+    {
+     
+      color: #ffffff !important;
+      box-shadow: none !important;
+      padding: 20px !important;
+      border-radius: 5px !important;
+    }
+    /* Fix for contact info items */
+    .info-item, .info-item div, .info-item i {
+      
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    
+    
+    /* Fix for loading/error/success messages */
+    .loading, .error-message, .sent-message {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    /* Fix for FAQ accordion */
+    .accordion-button, .accordion-body, .accordion-item {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background-color: #333 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Fix for any remaining white boxes */
+    .card, .card-body {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    .dark-background {
+      background-color: #000000 !important;
+    }
+    
+    .accent-background {
+      background-color: #000000 !important;
+    }
+    
+    .stats-item {
+      background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+    
+    .dropdown ul {
+      background-color: #1e1e1e !important;
+    }
+    
+    .dropdown ul li a {
+      color: #ffffff !important;
+    }
+    
+    .dropdown ul li a:hover {
+      background-color: #333333 !important;
+    }
+    
+    .portfolio-filters li {
+      color: #ffffff !important;
+    }
+    
+    .portfolio-filters li.filter-active {
+      color: #0d6efd !important;
+    }
+    
+    /* Enhanced fix for About section and Skills section */
+    #about, #about .container, #about .row, #about .col-md-6,
+    .about-info, .skills-content, .about-me {
+      
+      color: #ffffff !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    
+    /* Fix for the profile info box */
+    .about-info strong, .about-info span {
+      color: #ffffff !important;
+      padding: 5px !important;
+      border-radius: 5px !important;
+    }
+    
+    /* Fix for skills section */
+    .skills-content, .skills-animation, .progress, .progress-bar-wrap {
+    
+      color: #ffffff !important;
+      box-shadow: none !important;
+    }
+    
+    /* Fix for skill text */
+    .skill span, .skill i.val {
+      color: #ffffff !important;
+    }
+    
+    /* Fix for progress bars */
+    .progress-bar-wrap {
+      background-color: #333333 !important;
+    }
+    
+    .progress-bar {
+      background-color: #0078ff !important;
+    }
+    
+    /* About section - dark background */
+    #about, #about .about-info, #about .about-box {
+     
+      color: #ffffff !important;
+    }
+    
+    #about .card {
+      
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* Fix specifically for the About Me section */
+    .about-me {
+      
+      color: #ffffff !important;
+      padding: 20px !important;
+      border-radius: 5px !important;
+      box-shadow: none !important;
+    }
+    
+    .about-me h4 {
+      color: #ffffff !important;
+    }
+    
+    .about-me p {
+      color: #ffffff !important;
+    }
+    
+    /* Contact section - dark background */
+    #contact, #contact .info-wrap {
+     
+      color: #ffffff !important;
+      box-shadow: none !important;
+    }
+    
+    #contact .form-control {
+      background-color: #333333 !important;
+      color: #ffffff !important;
+      
+    }
+    
+    #contact button {
+      background-color: #333333 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Enhanced fix for contact container and info-wrap */
+    .container[data-aos="fade-up"][data-aos-delay="100"]
+    {
+     
+      color: #ffffff !important;
+      box-shadow: none !important;
+    }
+    .info-wrap[data-aos="fade-up"][data-aos-delay="200"] {
+     background-color: #000000;
+     color: #ffffff !important;
+     box-shadow: none !important;
+   }
+    
+    /* Fix for contact info items */
+    .info-item, .info-item div, .info-item i {
+      
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    .info-item h3, .info-item p {
+      color: #ffffff !important;
+    }
+    
+    /* Fix for contact form */
+    .php-email-form {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 20px !important;
+      border-radius: 5px !important;
+    }
+    
+    /* Fix for loading/error/success messages */
+    .loading, .error-message, .sent-message {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+    }
+    
+    /* Services section - remove blue overlay from icons */
+    .services .service-box .service-icon {
+      background: transparent !important;
+      color: #0078ff !important;
+    }
+    
+    .services .service-box .service-icon i {
+      color: #0078ff !important;
+    }
+    
+    /* Make service boxes dark */
+    .services .service-box {
+      background-color: #1a1a1a !important;
+      color: #ffffff !important;
+    }
+    
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Roshan Gurung</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <picture>
+        <source media="(min-width: 768px) and (max-width: 1024px)" srcset="assets/img/gsg.png">
+        <source media="(max-width: 767px)" srcset="assets/img/gsg.png">
+        <img src="assets/img/hero-img.png" alt="" data-aos="fade-in" style="width: 100%; height: auto;">
+      </picture>
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>I am Roshan Gurung</h2>
+        <p><span class="typed" data-typed-items="Instructor, Developer, Freelancer, Chef"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section" style="padding-left: 25px;">
+
+      <div class="container1" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="assets/img/rgg.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 ">
+                <p><strong>Name: </strong> <span>Roshan Gurung</span></p>
+                <p><strong>Profile: </strong> <span>Full Stack Developer,
+                Graphic Designer, Manager / Chef @HomelandFoodsProduct,<br> Private Tutor</span></p>
+                <p><strong>Email: </strong> <span>luzhan100@gmail.com</span></p>
+                <p><strong>Phone: </strong> <span>+977 9820629666</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5></h5>
+              <br>
+              <br>
+              <div class="row gy-3 align-items-center">
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/html-5.png" alt="HTML5" style="height:40px;"><br>
+                  <span>HTML5</span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/css3.png" alt="CSS3" style="height:40px;"><br>
+                  <span>CSS3</span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/js.png" alt="JavaScript" style="height:40px;"><br>
+                  <span>JavaScript</span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/flutter.png" alt="Flutter" style="height:40px;"><br>
+                  <span></span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/mongodb.png" alt="MongoDB" style="height:40px;"><br>
+                  <span></span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/sql.png" alt="SQL" style="height:100px;"><br>
+                  <span></span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/react.png" alt="Video Editing" style="height:40px;"><br>
+                  <span>React</span>
+                </div>
+                <div class="col-4 col-md-3 text-center">
+                  <img src="assets/img/skills/ielts.png" alt="IELTS" style="height:50px;"><br>
+                  <span></span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>About me</h4>
+              <p>
+                I am an energetic and passionate professional based in Pokhara, Nepal, with five years of experience as a manager in both the restaurant and frozen food industries. My journey has given me a deep understanding of business operations, team leadership, and the fast-paced world of food service. I am highly knowledgeable in cooking and have trained others in culinary skills and the management of fast food restaurants.
+              </p>
+              <p>
+                In addition to my culinary and managerial background, I have two years of experience as an IELTS instructor, having personally achieved an impressive score of 8.5 on the IELTS test. I am dedicated to helping others reach their language goals with effective teaching methods and personalized guidance. I have also privately tutored students from class 6 to 12, helping them excel academically.
+              </p>
+              <p>
+                My technical skills include developing and deploying websites, mobile applications, and PC software solutions for a variety of businesses. I am committed to delivering quality in every project I undertake, combining creativity, technical proficiency, and a strong work ethic to exceed expectations.
+              </p>
+              <p>
+                Driven by a passion for continuous learning and excellence, I strive to make a positive impact in every role I take on, ensuring that my clients and students receive the very best in service and results.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Discover my journey in technology, management, education and culinary arts.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+
+            <div class="resume-item ">
+              <h4>Roshan Gurung</h4>
+              <p><em>Dynamic and result-oriented professional with a strong background in graphic design, technology, management, and education. Experienced in leading creative projects, managing teams, and delivering high-quality solutions across digital, print, and business domains.</em></p>
+              <ul>
+                <li>Pokhara-11, Khaun </li>
+                <li>+977 9820629666</li>
+                <li>luzhan100@gmail.com</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor in Information Technology</h4>
+              <h5>2021 - 2025</h5>
+              <p><em>Informatics College, Pokhara, Nepal</em></p>
+              <p>During my studies at Informatics College, Pokhara, I gained a strong foundation in computer science, programming, and information systems. My education covered a wide range of topics including software development, database management, networking, and web technologies. Through hands-on projects and collaborative assignments, I developed practical skills in building applications and solving real-world problems. This academic experience has equipped me with the technical expertise and analytical mindset essential for a successful career in the IT industry.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Operations Manager</h4>
+              <h5>2019 - Present</h5>
+              <p><em>Homeland Foods Product, Pokhara, Nepal </em></p>
+              <ul>
+                <li> As Operations Manager, I am responsible for running both the restaurant and frozen food branches, handling day-to-day operations and ensuring smooth workflow across all departments</li>
+                <li>Operate machinery, cook, handle clients, and maintain business accounts with accuracy and efficiency. </li>
+                <li>Supervise the kitchen, train new staff, and manage teams of over 15 members at a time.</li>
+                <li>Oversee staff performance, foster teamwork, and ensure high standards of food quality and customer service.</li>
+                <li>Handle all the graphic design both physical and digital required for the business and also handle marketing of the company.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>IELTS Instructor & Consultant</h4>
+              <h5>2023 - Present</h5>
+              <p><em>Franklin Education Consultancy & Freelance, Pokhara, Nepal</em></p>
+              <ul>
+                <li>Achieved an overall IELTS band score of 8.</li>
+                <li>Taught IELTS as a freelancer and private instructor at multiple education consultancies in Pokhara.</li>
+                <li>Worked as a dedicated IELTS instructor at Franklin Education Consultancy for a full year (2024-2025).</li>
+                <li>Guided all students to achieve at least a 6.0 overall band score, with some reaching up to 7.5 bands.</li>
+                <li>Specialized in personalized coaching, exam strategies, and boosting student confidence for test success.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Full Stack Developer & Creative Specialist</h4>
+              <h5>2021 - Present</h5>
+              <p><em>Freelance & Contract Projects, Pokhara, Nepal</em></p>
+              <ul>
+                <li>Developed a variety of websites for cafes, small businesses, education institutes, e-commerce platforms, and event venues.</li>
+                <li>Built and deployed e-learning apps, school management apps, booking systems, finance/accounting apps, and e-commerce applications, with more projects in the pipeline.</li>
+                <li>Specialized in graphic design, including image editing, social media content creation, branding, poster and packaging design.</li>
+                <li>Proficient in video editing and production, including music videos, event videos (weddings, anniversaries, celebrations), vlogs, and documentaries.</li>
+                <li>Delivered creative solutions tailored to client needs, ensuring high-quality results across digital and multimedia projects.</li>
+              </ul>
+            </div>
+            <!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>I offer a wide range of services including web and app development, graphic design, video editing, and educational tutoring. My expertise helps businesses and individuals achieve their digital, creative, and academic goals.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>IELTS Classes</h3>
+              </a>
+              <p>I offer personalized private IELTS lessons tailored to each student's needs, helping them achieve their target band scores. With an overall score of 8 and extensive experience as a private instructor, I have successfully guided students to consistently score above 6.0, with many reaching up to 7.5 bands. My approach emphasizes individual attention, effective strategies, and confidence-building for exam success.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Graphic Design</h3>
+              </a>
+              <p>I provide creative graphic design solutions including branding, logo creation, social media content, posters, packaging, and image editing. With a keen eye for detail and a passion for visual storytelling, I help businesses and individuals stand out with impactful and memorable designs.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Website Development</h3>
+              </a>
+              <p>I design and develop modern, responsive websites tailored for cafes, small businesses, educational institutes, e-commerce, and event venues. My solutions are user-friendly, visually appealing, and optimized for performance, helping clients establish a strong online presence and achieve their business goals.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Mobile App Development</h3>
+              </a>
+              <p>I design and develop custom mobile applications for Android and iOS, including e-learning, booking, finance, e-commerce, and school management apps. My solutions are user-friendly, visually appealing, and tailored to meet the unique needs of each client, helping businesses and individuals bring their ideas to life on mobile platforms.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-fire"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Cooking Lessions</h3>
+              </a>
+              <p>I offer hands-on cooking lessons specializing in Indian, Chinese, Italian, Continental, and Nepali cuisines. With years of experience as a chef and manager, I teach practical techniques, kitchen skills, and authentic recipes to help you master delicious dishes at home or for your business.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-mortarboard-fill"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Private Tutoring</h3>
+              </a>
+              <p>I provide personalized private tutoring for students from class 6 to 12, focusing on academic excellence and confidence-building. My approach adapts to each student's unique learning style, ensuring clear understanding of subjects and improved performance in school exams and competitive tests.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section accent-background">
+
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="0" class="purecounter">232</span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">521</span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1000+" data-purecounter-duration="0" class="purecounter">1453</span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="0" class="purecounter">32</span>
+              <p>Awards</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Explore a selection of my recent projects in web development, mobile apps, graphic design, and more. Each project showcases my commitment to quality, creativity, and delivering results that exceed client expectations.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Website</li>
+            <li data-filter=".filter-branding">Graphic Design</li>
+            <li data-filter=".filter-books">Classes</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/gyansagarlogo.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Gyansagar</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Geet Sansar</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Social Media Posts</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <img src="assets/img/IELTS.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>IELTS Classes</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Roopkatha</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>GyanSort</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Video Editing</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Cooking CLasses</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Namaste Events</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/secondcup.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Second Cup</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Branding Design</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Private Tutoring</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Find answers to common questions about my services, experience, and how I can help you achieve your goals. If you have more queries, feel free to reach out directly for personalized information.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>What services do you offer?</span></h3>
+                <div class="faq-content">
+                  <p>I offer website development, mobile app development, graphic design, cooking lessons, IELTS lessons and private tutoring for students from class 6 to 12.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>How can I contact you for a project or lesson?</span></h3>
+                <div class="faq-content">
+                  <p>You can reach me via email at luzhan100@gmail.com or call me at +977 9820629666. I am also available through the contact form on this website.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>What technologies do you use for web and app development?</span></h3>
+                <div class="faq-content">
+                  <p>I use modern technologies such as HTML, CSS, JavaScript, Flutter, MongoDB, React, React Native and SQL to build responsive and user-friendly websites and mobile applications.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>Do you provide online or in-person lessons?</span></h3>
+                <div class="faq-content">
+                  <p>I offer both online and in-person lessons, depending on your preference and location.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>Can you help with branding and logo design?</span></h3>
+                <div class="faq-content">
+                  <p>Yes, I provide comprehensive graphic design services, including branding, logo creation, social media posts and promotional materials.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">6.</span> <span>What is your experience in teaching and tutoring?</span></h3>
+                <div class="faq-content">
+                  <p>I have over two years of experience as an IELTS instructor and have privately tutored students from class 6 to 12, helping them excel academically since 2021.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">7.</span> <span>What cuisines do you teach in your cooking lessons?</span></h3>
+                <div class="faq-content">
+                  <p>I specialize in Indian, Chinese, Italian, Continental, and Nepali cuisines, offering hands-on lessons for all skill levels. My main focus is on the basics of F&B business, kitchen operation and fast food.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section accent-background">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/rahul.png" class="testimonial-img" alt="">
+                <h3>Rahul G.C</h3>
+                <h4>CEO &amp; Founder, Kantipur Garden Batika</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Working with Roshan sir was a fantastic experience. His professionalism and creativity made a real difference to our project. Highly recommended!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/bizen.png" class="testimonial-img" alt="">
+                <h3>Bijen Thapa</h3>
+                <h4>CTO, GB Technology</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Roshan sir delivered outstanding results on time and exceeded our expectations. His technical skills and dedication are truly impressive.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/sourav.png" class="testimonial-img" alt="">
+                <h3>Sourav Gurung</h3>
+                <h4>SEO Specialist</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>As a senior, I have had the pleasure of mentoring Roshan. He is a quick learner, consistently takes initiative, and always delivers quality work on time. His positive attitude and dedication make him a valuable member of any team. I am confident he will achieve great things in his career.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/dhanraj.JPG" class="testimonial-img" alt="">
+                <h3>Dhan Raj Gurung</h3>
+                <h4>IELTS Student</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Roshan sir is an outstanding teacher. His clear explanations and constant encouragement helped me achieve a band 8 in IELTS. He truly cares about his students' success and makes learning enjoyable. I highly recommend him to anyone preparing for IELTS</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/aman.jpg" class="testimonial-img" alt="">
+                <h3>Aman Gurng</h3>
+                <h4>Cook</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Learning from Roshan sir was a wonderful experience. His passion for cooking and patient teaching style made every class enjoyable. I gained a lot of confidence in the kitchen thanks to his guidance. Highly recommended!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" >
+        <h2>Contact</h2>
+        <p>Interested in working together or have any questions? Feel free to reach out.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100" style="background-color: #000000;">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Baseri, Pokhara, Nepal</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+977 9820629666</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>luzhan100@gmail.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background" style="background-color: #000000;">
+
+    <div class="container" style="background-color: #000000;">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Roshan Gurung</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        
+        <a href="https://www.facebook.com/roshan.gurung.685740/"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/luzhan.f.zay.a/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/roshan-gurung-07227527b/"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
